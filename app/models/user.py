@@ -22,3 +22,8 @@ class User(Base):
         nullable=False,
         default=lambda: datetime.now(timezone.utc),
     )
+
+    def __eq__(self, other):
+        if not isinstance(other, User):
+            return False
+        return self.id == other.id
