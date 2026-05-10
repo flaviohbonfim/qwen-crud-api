@@ -1,0 +1,33 @@
+[project]
+name = "crud-api"
+version = "1.0.0"
+description = "RESTful API de gerenciamento de usuários com FastAPI, Clean Architecture e SQLAlchemy assíncrono"
+requires-python = ">=3.12"
+
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.34.0",
+    "sqlalchemy[asyncio]>=2.0.36",
+    "aiosqlite>=0.21.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.7.0",
+    "passlib[bcrypt]>=1.7.4",
+    "email-validator>=2.2.0",
+    "greenlet (>=3.5.0,<4.0.0)",
+]
+
+[tool.poetry]
+package-mode = false
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "A", "C4", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
